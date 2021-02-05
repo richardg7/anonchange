@@ -4,6 +4,8 @@ O AnonChange foi projetado para mudar o IP em determinados segundos com o AnonSu
 
 NOTE: Desenvolvido para fins Academicos.
 
+![alt text](https://github.com/richardg7/anonchange/blob/main/anonchange.png?raw=true)
+
 ## Como usar este repo
 
 Este repo contém as fontes dos pacotes AnonChange para o AnonSurf combinados em um.
@@ -68,5 +70,3 @@ pandora bomb
 ```
 
 NOTA: NÃO execute isso como service anonsurf $COMMAND. Execute isso como anonsurf $COMMAND
-
-![alt text](https://github.com/richardg7/anonchange/blob/main/anonchange.png?raw=true)
