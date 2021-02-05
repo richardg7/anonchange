@@ -2,7 +2,7 @@
 
 O AnonChange foi projetado para mudar o IP em determinados segundos com o AnonSurf e stealth do ParrotSec, portado para funcionar com Kali Linux.
 
-NOTE: Desenvolvido para fins Academicos.
+NOTE: Desenvolvido para fins Acadêmicos.
 
 ![alt text](https://github.com/richardg7/anonchange/blob/main/anonchange.png?raw=true)
 
