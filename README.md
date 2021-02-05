@@ -38,7 +38,7 @@ Uso:
  Bomba Pandora - O Pandora substitui automaticamente a RAM quando o sistema é desligado
 ```
 
-## Installation
+## Instalação
 Este pacote vem com um executor que torna as coisas extremamente fáceis:
 
 ```bash
