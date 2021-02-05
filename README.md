@@ -17,7 +17,7 @@ NOTE: Isso pode funcionar com qualquer sistema debian / ubuntu, mas só foi test
 ### AnonSurf
 O Anonsurf tornará anônimo todo o sistema sob TOR usando IPTables. Também permitirá que você inicie e pare o i2p.
 
-NOTA: NÃO execute isso como ```service anonsurf $COMMAND```. Execute isso como ```bash anonchange.sh```
+NOTA: NÃO execute isso como ```$COMMAND anonchange.sh```. Execute isso como ```bash anonchange.sh```
 
 ``````bash
 Uso:
