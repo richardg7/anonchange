@@ -14,31 +14,42 @@ NOTE: Isso pode funcionar com qualquer sistema debian / ubuntu, mas só foi test
 
 ## Uso
 
-### AnonSurf
-O Anonsurf tornará anônimo todo o sistema sob TOR usando IPTables. Também permitirá que você inicie e pare o i2p.
+### AnonChange
+O AnonChange mudará o seou IP no sistema TOR usando IPTables a cada 3 segundos.
 
 NOTA: NÃO execute isso como ```$COMMAND anonchange.sh```. Execute isso como ```bash anonchange.sh```
 
 ``````bash
 Uso:
- bash anonchange.sh {Instalar AnonSurf|Ligar AnonSurf|Mudar IP AnonSurf|Parar AnonSurf|Reiniciar AnonSurf|Status AnonSurf|Bomba Pandora}
+ bash anonchange.sh {Instalar AnonSurf|Mudar IP AnonSurf|Parar IP AnonSurf}
 
- {Instalar AnonSurf - Instala o AnonSurf caso não o  te
- Ligar AnonSurf - Iniciar anônimo em todo o sistema
-          tunelamento sob proxy TOR através de iptables
+ Instalar AnonSurf - Instala o AnonSurf caso não o  tenha instalado
  Mudar IP AnonSurf - Muda o IP do AnonSurf a cada 3 segundos
- Parar AnonSurf - Redefinir as configurações de iptables originais
-          e volte para limpar a navegação
- Reiniciar AnonSurf - Combina as opções " parar " e " iniciar "
- alterar - altera a identidade reiniciando o TOR 
- Status AnonSurf - Verifique se o AnonSurf está funcionando corretamente
----- [recursos relacionados ao I2P] ----
- starti2p - Iniciar serviços i2p
- stopi2p - interrompe os serviços i2p
- Bomba Pandora - O Pandora substitui automaticamente a RAM quando o sistema é desligado
+ Parar IP AnonSurf - Sair do AnonChange
 ```
 
-## Instalação
+### anonsurf
+O Anonsurf tornará anônimo todo o sistema sob TOR usando IPTables. Também permitirá que você inicie e pare o i2p.
+
+NOTA: NÃO execute isso como```service anonsurf $COMMAND```. Execute isso como ```anonsurf $COMMAND```
+
+```bash
+Usage:
+ anonsurf {start|stop|restart|change|status}
+
+ start - Start system-wide anonymous
+          tunneling under TOR proxy through iptables
+ stop - Reset original iptables settings
+          and return to clear navigation
+ restart - Combines "stop" and "start" options
+ change - Changes identity restarting TOR 
+ status - Check if AnonSurf is working properly
+----[ I2P related features ]----
+ starti2p - Start i2p services
+ stopi2p - Stop i2p services
+```
+
+## Installation
 Este pacote vem com um executor que torna as coisas extremamente fáceis:
 
 ```bash
