@@ -21,7 +21,7 @@ O AnonChange mudará o seou IP no sistema TOR usando IPTables a cada 3 segundos.
 
 NOTA: NÃO execute isso como ```$COMMAND anonchange.sh```. Execute isso como ```bash anonchange.sh```
 
-``````bash
+```bash
 Uso:
  bash anonchange.sh {Instalar AnonSurf|Mudar IP AnonSurf|Parar IP AnonSurf}
 
