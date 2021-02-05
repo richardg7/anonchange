@@ -10,7 +10,7 @@ NOTE: Desenvolvido para fins Academicos.
 
 Este repo contém as fontes dos pacotes AnonChange para o AnonSurf combinados em um.
 
-The easiest way to get this working is to just run the installer. See the installation section for further info.
+A maneira mais fácil de fazer isso funcionar é apenas executar o instalador. Veja a seção de instalação para mais informações.
 
 NOTE: Isso pode funcionar com qualquer sistema debian / ubuntu, mas só foi testado para funcionar em um sistema ParrotSec e amd64 kali-rolling.
 
@@ -51,10 +51,19 @@ Usage:
  stopi2p - Stop i2p services
 ```
 
-## Installation
+## Instalação
 Este pacote vem com um executor que torna as coisas extremamente fáceis:
 
 ```bash
+Digitar:
+git clone https://github.com/richardg7/anonchange.git
+
+Entrar na pasta:
+
+cd anonchange
+
+E diigitar:
+
 bash anonchange.sh
 ou
 ./anonchange.sh
