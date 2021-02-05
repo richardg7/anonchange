@@ -68,3 +68,5 @@ pandora bomb
 ```
 
 NOTA: NÃO execute isso como service anonsurf $COMMAND. Execute isso como anonsurf $COMMAND
+
+![alt text](https://github.com/richardg7/anonchange/blob/main/anonchange.png?raw=true)
