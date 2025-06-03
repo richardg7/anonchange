@@ -1,10 +1,29 @@
 # AnonChange
 
-O AnonChange foi projetado para mudar o IP em determinados segundos com o AnonSurf e stealth do ParrotSec, portado para funcionar com Kali Linux.
+O **AnonChange** é um utilitário interativo para automatizar a troca de IP usando o AnonSurf, compatível com Kali Linux e ParrotSec. Ele facilita a instalação do AnonSurf, inicialização e troca periódica de identidade via Tor, tornando o processo mais acessível para usuários de sistemas baseados em Debian.
 
-NOTE: Desenvolvido para fins Acadêmicos.
+> **Atenção:** Desenvolvido para fins acadêmicos e educacionais.
 
-![alt text](https://github.com/richardg7/anonchange/blob/main/anonchange.png?raw=true)
+![AnonChange](https://github.com/richardg7/anonchange/blob/main/anonchange.png?raw=true)
+
+---
+
+## Recursos
+
+- Instalação automática do AnonSurf (Kali Linux)
+- Inicialização do AnonSurf (ParrotSec)
+- Troca automática de IP/identidade Tor em intervalos definidos pelo usuário
+- Detecção e instalação automática do Tor (com orientações para resolução de problemas de chave pública e dependências)
+- Interface amigável e interativa em shell script
+
+---
+
+## Pré-requisitos
+
+- Sistema baseado em Debian (Kali Linux ou ParrotSec recomendado)
+- Permissões de root para instalação de dependências
+
+---
 
 ## Como usar este repo
 
@@ -14,62 +33,74 @@ A maneira mais fácil de fazer isso funcionar é apenas executar o instalador. V
 
 NOTE: Isso pode funcionar com qualquer sistema debian / ubuntu, mas só foi testado para funcionar em um sistema ParrotSec e amd64 kali-rolling.
 
-## Uso
-
-### AnonChange
-O AnonChange mudará o seou IP no sistema TOR usando IPTables a cada 3 segundos.
-
-NOTA: NÃO execute isso como ```$COMMAND anonchange.sh```. Execute isso como ```bash anonchange.sh```
-
-```bash
-Uso:
- bash anonchange.sh {Instalar AnonSurf|Mudar IP AnonSurf|Parar IP AnonSurf}
-
- Instalar AnonSurf - Instala o AnonSurf caso não o  tenha instalado
- Mudar IP AnonSurf - Muda o IP do AnonSurf a cada 3 segundos
- Parar IP AnonSurf - Sair do AnonChange
-```
-
-### anonsurf
-O Anonsurf tornará anônimo todo o sistema sob TOR usando IPTables. Também permitirá que você inicie e pare o i2p.
-
-NOTA: NÃO execute isso como```service anonsurf $COMMAND```. Execute isso como ```anonsurf $COMMAND```
-
-```bash
-Usage:
- anonsurf {start|stop|restart|change|status}
-
- start - Start system-wide anonymous
-          tunneling under TOR proxy through iptables
- stop - Reset original iptables settings
-          and return to clear navigation
- restart - Combines "stop" and "start" options
- change - Changes identity restarting TOR 
- status - Check if AnonSurf is working properly
-----[ I2P related features ]----
- starti2p - Start i2p services
- stopi2p - Stop i2p services
-```
+---
 
 ## Instalação
-Este pacote vem com um executor que torna as coisas extremamente fáceis:
+
+Clone o repositório e execute o script:
 
 ```bash
-Digitar:
 git clone https://github.com/richardg7/anonchange.git
-
-Entrar na pasta:
-
 cd anonchange
-
-E diigitar:
-
-bash anonchange.sh
-ou
-./anonchange.sh
+sudo bash anonchange.sh
 ```
 
-Assim que o instalador estiver concluído, você poderá usar os módulos anonsurf e pandora.
+> **Importante:** Execute sempre como root (`sudo bash anonchange.sh`) para garantir que todas as dependências possam ser instaladas automaticamente.
+
+---
+
+## Uso
+
+Ao rodar o script, você verá um menu interativo:
+
+```
+1) Mudar o IP automaticamente
+2) Instalar/Iniciar o AnonSurf
+3) Sair
+```
+
+### Opções do menu
+
+- **Mudar o IP automaticamente:**  
+  Escolha sua distribuição, defina o intervalo em segundos (mínimo 10) e o script trocará sua identidade Tor periodicamente usando o AnonSurf.
+
+- **Instalar/Iniciar o AnonSurf:**  
+  - No Kali Linux, instala o AnonSurf a partir do repositório [kali-anonsurf](https://github.com/richardg7/kali-anonsurf).
+  - No ParrotSec, apenas inicializa o serviço AnonSurf.
+
+- **Sair:**  
+  Encerra o script.
+
+---
+
+## Resolução de Problemas
+
+Se ocorrerem erros de chave pública ou dependências quebradas durante a instalação do Tor, siga as instruções exibidas pelo próprio script ou execute manualmente:
+
+```bash
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED65462EC8D5E4C5
+sudo apt update
+sudo apt --fix-broken install
+sudo apt install -y tor
+```
+
+Se o serviço Tor não iniciar automaticamente, tente:
+
+```bash
+sudo systemctl start tor
+# ou
+sudo service tor start
+```
+
+---
+
+## Observações
+
+- O script foi testado em Kali Linux e ParrotSec (amd64).
+- Para máxima compatibilidade, mantenha seu sistema atualizado.
+- O uso do AnonSurf e do Tor não garante anonimato absoluto. Use com responsabilidade.
+
+---
 
 ### Pandora
 O Pandora substitui automaticamente a RAM quando o sistema é desligado. O Pandora também pode ser executado manualmente:
@@ -78,6 +109,17 @@ O Pandora substitui automaticamente a RAM quando o sistema é desligado. O Pando
 pandora bomb
 ```
 
-NOTA: NÃO execute isso como service anonsurf $COMMAND. Execute isso como anonsurf $COMMAND
+---
 
-<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p>
+## Licença
+
+Este projeto está licenciado sob [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1).
+
+---
+
+### 👨‍💻 Author
+
+Developed by Richard Guedes - Cyber ​​Defense Institute (IDCiber) – [idciber.org](https://idciber.org)
+
+---
+[AnonChange](https://github.com/richardg7/sso_login) by [Richard Guedes](https://www.linkedin.com/in/richard-guedes/) is licensed under [Creative Commons Attribution-ShareAlike 4.0 International]<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p>
